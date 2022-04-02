@@ -1,5 +1,5 @@
 package administrativo;
 
-public class CorpoDocente {
+public class Diretor {
 
 }
