@@ -2,10 +2,35 @@ package collections;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import collections.ExemploOrdenacaoList.Gato.ComparatorIdade;
+
 import java.util.Collections;
+import java.util.Comparator;
 
 public class ExemploOrdenacaoList {
 
+	static class ComparatorCor implements Comparator<Gato> {
+		@Override
+		public int compare(Gato g1, Gato g2) {
+			
+			return g1.getCor().compareToIgnoreCase(g2.getCor());
+		}
+	}
+	
+	static class ComparatorNomeCorIdade implements Comparator<Gato>{
+		@Override
+		public int compare(Gato g1, Gato g2) {
+			int nome = g1.getNome().compareToIgnoreCase(g2.getNome());
+			if(nome != 0) return nome;
+			
+			int cor = g1.getCor().compareToIgnoreCase(g2.getCor());
+			if(cor != 0) return cor;
+			
+			
+			return Integer.compare(g1.getIdade(), g2.getIdade());
+		}
+	}
 	
 	/*Dadas as seguintes informações sobre meus gatos, crie uma lista
 	e ordene esta lista exibindo:
@@ -35,6 +60,20 @@ public class ExemploOrdenacaoList {
 		Collections.sort(meusGatos);
 		System.out.println(meusGatos);
 		
+		System.out.println("--\tOrdem Idade\t---");
+		//Collections.sort(meusGatos, new ComparatorIdade());
+		meusGatos.sort(new ComparatorIdade()); //duas formas de comparar e ordenar
+		System.out.println(meusGatos);
+		
+		System.out.println("--\tOrdem Cor\t---");
+		Collections.sort(meusGatos, new ComparatorCor());
+		//meusGatos.sort(new ComparatorCor()); //duas formas de comparar e ordenar
+		System.out.println(meusGatos);
+		
+		System.out.println("--\tOrdem Nome, Cor ou Idade\t---");
+		Collections.sort(meusGatos, new ComparatorNomeCorIdade());
+		//meusGatos.sort(new ComparatorCor()); //duas formas de comparar e ordenar
+		System.out.println(meusGatos);
 		
 		
 	}
@@ -81,8 +120,13 @@ public class ExemploOrdenacaoList {
 			return this.getNome().compareToIgnoreCase(o.getNome());
 		}		
 		
-		
-		
+		static class ComparatorIdade implements Comparator<Gato> {
+			@Override
+			public int compare(Gato g1, Gato g2) {
+				
+				return Integer.compare(g1.getIdade(), g2.getIdade());
+			}
+		}
 		
 	}
 }
