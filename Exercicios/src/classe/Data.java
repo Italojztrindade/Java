@@ -11,10 +11,10 @@ public class Data {
 		ano = 1970;
 	}
 	
-	Data(int dia, int mes, int ano){
+	Data(int dia, int mes, int anoI){
 		dia = this.dia;
 		mes = this.mes;
-		ano = this.ano;
+		ano = anoI;
 	}
 	String obterDataFormatada() {
 		return String.format("%d/%d/%d", dia, mes,ano);
