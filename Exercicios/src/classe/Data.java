@@ -11,14 +11,17 @@ public class Data {
 		ano = 1970;
 	}
 	
-	Data(int dia, int mes, int anoI){
-		dia = this.dia;
-		mes = this.mes;
-		ano = anoI;
+	Data(int dia, int mes, int ano){
+		this.dia = dia;
+		this.mes = mes;
+		this.ano = ano;
 	}
 	String obterDataFormatada() {
-		return String.format("%d/%d/%d", dia, mes,ano);
-		
-		
+		final String formato = "%d/%d/%d";
+		return String.format(formato, dia, mes,ano);		
+	}
+	
+	void imprimirDataFormatada() {
+		System.out.println(this.obterDataFormatada());
 	}
 }
