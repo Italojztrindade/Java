@@ -15,4 +15,19 @@ public class Aluno {
 		this.cursos.add(curso);
 		curso.alunos.add(this); // relação muitos
 	}
+	
+	Curso obterCursoPorNome(String nome) {
+		Curso procurado = null;
+		
+		for(Curso curso: this.cursos) {
+			if(curso.nome.equalsIgnoreCase(nome)) {
+				return curso;
+			}
+		}
+		return procurado;
+	}
+	//converter um objeto no formato string
+	public String toString() {
+		return nome;
+	}
 }
