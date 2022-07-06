@@ -20,8 +20,8 @@ public class DesafioMain {
 //		
 //		cliente1.compra.obterValorTotal(compra1);
 		
-		System.out.println("nome do cliente" + cliente1.nome);
-		System.out.println("nome do produto" + produto1.nomeDoProduto);
+		System.out.println("nome do cliente " + cliente1.nome);
+		System.out.println("nome do produto " + produto1.nomeDoProduto);
 		System.out.println("preço do produto R$ " + produto2.preco);
 		System.out.println("Quantidade de itens" + item1.quantidade);
 		System.out.println(item2.produto.nomeDoProduto);
