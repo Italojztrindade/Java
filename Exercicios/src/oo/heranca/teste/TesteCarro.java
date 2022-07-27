@@ -34,6 +34,9 @@ public class TesteCarro {
 		ferrari.ligarTurbo();
 		ferrari.ligarAr();
 		ferrari.desligarAr();
+		
+		System.out.println(ferrari.velocidadeDoAr());
+		
 		System.out.println("\nAcelerando 3x");
 		
 		ferrari.acelerar();
