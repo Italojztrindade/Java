@@ -17,6 +17,8 @@ public class DesafioFilter {
 	CarroFilter c6 = new CarroFilter(290, "Prata", "Esportivo");
 	
 	List<CarroFilter> carros = Arrays.asList(c1, c2, c3, c4,c5,c6);
+	
+	
 	Predicate<CarroFilter> velMax = v -> v.velocidadeMax >= 220;
 	Predicate<CarroFilter> validandoACor = v -> v.cor.equalsIgnoreCase("vermelho");
 	Predicate<CarroFilter> validandoTipo = v -> v.modelo.equalsIgnoreCase("Esportivo");
