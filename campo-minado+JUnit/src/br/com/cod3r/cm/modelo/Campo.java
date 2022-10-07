@@ -3,7 +3,7 @@ package br.com.cod3r.cm.modelo;
 import java.util.ArrayList;
 import java.util.List;
 
-import br.com.cod3r.cm.excecao.explosaoExcepction;
+import br.com.cod3r.cm.excecao.ExplosaoExcepction;
 
 public class Campo {
 
@@ -55,7 +55,7 @@ public class Campo {
 			aberto = true;
 
 			if (minado) {
-				throw new explosaoExcepction();
+				throw new ExplosaoExcepction();
 			}
 
 			if (vizinhacaSegura()) {
@@ -70,5 +70,21 @@ public class Campo {
 
 	boolean vizinhacaSegura() {
 		return vizinhos.stream().noneMatch(v -> v.minado);
+	}
+
+	void minar() {
+		minado = true;
+	}
+
+	public boolean isMarcado() {
+		return marcado;
+	}
+
+	public boolean isAberto() {
+		return aberto;
+	}
+
+	public boolean isFechado() {
+		return !isAberto();
 	}
 }
