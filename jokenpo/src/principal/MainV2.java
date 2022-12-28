@@ -14,6 +14,7 @@ public class MainV2 {
 		radioButtonFrame.setLayout(new GridBagLayout());
 		radioButtonFrame.setTitle("Jokenpo");
 		radioButtonFrame.setLocationRelativeTo(null);
+		radioButtonFrame.setIcon();
 	}
 
 }

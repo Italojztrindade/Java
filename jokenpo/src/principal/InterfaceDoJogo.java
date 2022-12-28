@@ -7,6 +7,7 @@ import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JRadioButton;
 import java.awt.FlowLayout;
+import java.awt.Toolkit;
 
 @SuppressWarnings("serial")
 public class InterfaceDoJogo extends JFrame {
@@ -38,6 +39,12 @@ public class InterfaceDoJogo extends JFrame {
 		int computador = (int) (Math.random() * 3 + 1);
 		return computador;
 	}
+	//definindo o icone da janela
+	public void setIcon() {
+		setIconImage(Toolkit.getDefaultToolkit().getImage(getClass().getResource("scissors.png")));
+	}
+	
+	
 	private class RadioButtonHandler implements ItemListener{
 
 		@Override
