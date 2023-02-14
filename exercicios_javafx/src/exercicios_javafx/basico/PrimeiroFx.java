@@ -4,7 +4,7 @@ import javafx.application.Application;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
-import javafx.scene.layout.VBox;
+import javafx.scene.layout.HBox;
 import javafx.stage.Stage;
 
 public class PrimeiroFx extends Application{
@@ -16,7 +16,11 @@ public class PrimeiroFx extends Application{
 		Button botaoB = new Button("B");
 		Button botaoC = new Button("C");
 		
-		VBox box = new VBox();
+		botaoA.setOnAction(e -> System.out.println("A"));
+		botaoB.setOnAction(e -> System.out.println("B"));
+		botaoC.setOnAction(e -> System.exit(0));
+		
+		HBox box = new HBox();
 		box.setAlignment(Pos.CENTER);
 		box.setSpacing(10);
 		box.getChildren().add(botaoA);
