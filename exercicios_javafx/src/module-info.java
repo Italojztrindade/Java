@@ -4,4 +4,5 @@ module exerciciosfx {
 	requires javafx.graphics;
 	
 	opens exercicios_javafx.basico;
+	opens layout;
 }
